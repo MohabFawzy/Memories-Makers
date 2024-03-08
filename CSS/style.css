@@ -1,30 +1,13 @@
 /* Start Variables */
 :root {
-  --main-color: black;
+  --main-color: #0e0408;
   --secondary-color: #8a2851;
   --padding: 60px;
   --section-background-color: #f6f6f6;
   --color-of-paragraph: #777;
 }
 /* Start Adding Font */
-@font-face {
-  font-family: Helvetica-Rounded-Bold;
-  src: local("Helvetica Neue Bold"), local("HelveticaNeue-Bold"),
-    url("../fonts/Helvetica/helvetica-rounded-bold-5871d05ead8de.otf");
-  font-weight: bold;
-}
-@font-face {
-  font-family: Helvetica-Bold;
-  src: local("Helvetica Neue Bold"), local("HelveticaNeue-Bold"),
-    url("../fonts/Helvetica/Helvetica-Bold.ttf");
-  font-weight: bold;
-}
-@font-face {
-  font-family: Helvetica;
-  src: local("Helvetica Neue Bold"), local("HelveticaNeue-Bold"),
-    url("../fonts/Helvetica/Helvetica.ttf");
-  font-weight: bold;
-}
+
 .aboreto-regular {
   font-family: "Aboreto", system-ui;
   font-weight: 400;
@@ -39,7 +22,8 @@
 /* End Adding Font */
 /* Start Components */
 .special-heading {
-  font-family: Helvetica-Rounded-Bold;
+  font-family: "Poppins", sans-serif;
+  line-height: 1;
   color: var(--secondary-color);
   font-size: 100px;
   text-align: center;
@@ -48,11 +32,13 @@
   letter-spacing: -3px;
 }
 .special-heading + p {
-  font-family: Helvetica-Bold;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 1;
   text-align: center;
-  margin: -30px 0 0;
-  font-size: 20px;
-  color: black;
+  margin: -15px 0 0;
+  font-size: 25px;
+  color: #0e0408;
 }
 @media (max-width: 767px) {
   .special-heading {
@@ -73,7 +59,9 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: Helvetica;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1;
   background-color: #efe9dd;
 }
 
@@ -112,17 +100,22 @@ header {
 }
 
 header a {
-  font-family: Helvetica-Rounded-Bold;
+  font-family: "Poppins", sans-serif;
+  font-weight: 650px;
+  line-height: 1;
   position: relative;
-  color: black;
+  color: #0e0408;
   text-decoration: none;
   margin: 0px 15px;
-  font-size: larger;
+  font-size: 15px;
+  transition: 0.3s;
 }
 
 header a:hover {
   background-color: transparent;
-  color: black;
+  color: #0e0408;
+  font-size: 20px;
+  font-weight: 800px;
 }
 
 header a::after {
@@ -132,7 +125,7 @@ header a::after {
   left: 0;
   width: 100%;
   height: 2px; /* Adjust the thickness of the line as needed */
-  background-color: black;
+  background-color: #0e0408;
   transform: scaleX(0); /* Initially, the line is invisible */
   transition: transform 0.3s ease;
 }
@@ -141,7 +134,9 @@ header a:hover::after {
   transform: scaleX(1); /* When hovered, the line appears */
 }
 header .links {
-  font-family: Helvetica-Rounded-Bold;
+  font-family: "Poppins", sans-serif;
+  font-weight: 650px;
+  line-height: 1;
   position: relative;
   display: inline-block;
 }
@@ -149,9 +144,14 @@ header .links {
 header .links .text {
   padding: 10px;
   background-color: transparent;
-  color: black;
+  color: #0e0408;
   cursor: pointer;
-  font-size: larger;
+  font-size: 15px;
+  transition: 0.3s;
+}
+header .links .text:hover {
+  font-size: 20px;
+  font-weight: 800px;
 }
 
 header .links ul {
@@ -165,17 +165,21 @@ header .links ul {
   min-width: 200px;
   display: none;
   z-index: 1;
+  font-size: 15px;
+  transition: 0.3s;
 }
 
 .links:hover ul {
   display: block;
+  font-size: 20px;
+  font-weight: 800px;
 }
 
 header .links ul li a {
   display: block;
   padding: 15px;
   text-decoration: none;
-  color: black;
+  color: #0e0408;
   transition: 0.3s;
 }
 
@@ -226,7 +230,7 @@ header .links ul li:not(:last-child) {
 .features {
   padding-top: 60px;
   padding-bottom: 60px;
-  background-color: #ebeced;
+  background-color: #e8d4dc;
 }
 .features .container {
   display: grid;
@@ -247,12 +251,13 @@ header .links ul li:not(:last-child) {
   font-size: 25px;
 }
 .features .feat h3 {
-  font-family: Helvetica-Bold;
-  font-weight: 1000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
   margin: 25px 0;
 }
 .features .feat p {
-  font-family: Helvetica;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
   line-height: 1.8;
   color: #777;
   font-size: 17px;
@@ -268,7 +273,6 @@ header .links ul li:not(:last-child) {
   padding-top: var(--padding);
   padding-bottom: var(--padding);
   text-align: center;
-  margin-right: 350px;
 }
 .contact .info .label {
   font-size: 35px;
@@ -314,3 +318,12 @@ header .links ul li:not(:last-child) {
   color: #efe9dd;
 }
 /* End Footer */
+.logo-img {
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-img img {
+  width: 100%;
+}
