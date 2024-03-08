@@ -1,0 +1,316 @@
+/* Start Variables */
+:root {
+  --main-color: black;
+  --secondary-color: #8a2851;
+  --padding: 60px;
+  --section-background-color: #f6f6f6;
+  --color-of-paragraph: #777;
+}
+/* Start Adding Font */
+@font-face {
+  font-family: Helvetica-Rounded-Bold;
+  src: local("Helvetica Neue Bold"), local("HelveticaNeue-Bold"),
+    url("../fonts/Helvetica/helvetica-rounded-bold-5871d05ead8de.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: Helvetica-Bold;
+  src: local("Helvetica Neue Bold"), local("HelveticaNeue-Bold"),
+    url("../fonts/Helvetica/Helvetica-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: Helvetica;
+  src: local("Helvetica Neue Bold"), local("HelveticaNeue-Bold"),
+    url("../fonts/Helvetica/Helvetica.ttf");
+  font-weight: bold;
+}
+.aboreto-regular {
+  font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.allura-regular {
+  font-family: "Allura", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* End Adding Font */
+/* Start Components */
+.special-heading {
+  font-family: Helvetica-Rounded-Bold;
+  color: var(--secondary-color);
+  font-size: 100px;
+  text-align: center;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -3px;
+}
+.special-heading + p {
+  font-family: Helvetica-Bold;
+  text-align: center;
+  margin: -30px 0 0;
+  font-size: 20px;
+  color: black;
+}
+@media (max-width: 767px) {
+  .special-heading {
+    font-size: 60px;
+  }
+  .special-heading + p {
+    margin-top: -20px;
+  }
+}
+/* End Components */
+/* Start Global Rules  */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Helvetica;
+  background-color: #efe9dd;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* mediam */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* End Global Rules */
+/* Start Header */
+header {
+  text-align: center; /* Center align the header */
+  padding: 20px 0;
+}
+
+header a {
+  font-family: Helvetica-Rounded-Bold;
+  position: relative;
+  color: black;
+  text-decoration: none;
+  margin: 0px 15px;
+  font-size: larger;
+}
+
+header a:hover {
+  background-color: transparent;
+  color: black;
+}
+
+header a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Adjust the thickness of the line as needed */
+  background-color: black;
+  transform: scaleX(0); /* Initially, the line is invisible */
+  transition: transform 0.3s ease;
+}
+
+header a:hover::after {
+  transform: scaleX(1); /* When hovered, the line appears */
+}
+header .links {
+  font-family: Helvetica-Rounded-Bold;
+  position: relative;
+  display: inline-block;
+}
+
+header .links .text {
+  padding: 10px;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  font-size: larger;
+}
+
+header .links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  display: none;
+  z-index: 1;
+}
+
+.links:hover ul {
+  display: block;
+}
+
+header .links ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
+
+header .links ul li a:hover,
+header .links ul li a:focus {
+  background-color: #ddd;
+}
+
+header .links ul li:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+/* End Header */
+/* <!-- Start Landing Section --> */
+.landing {
+  background-image: url(../imgs/Landing.png);
+  background-size: cover;
+  height: calc(100vh - 64px);
+  position: relative;
+}
+.landing .intro-text {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  text-align: center;
+  width: 320px;
+  max-width: 100%;
+}
+.landing .intro-text h1 {
+  font-family: "Aboreto", system-ui;
+  margin: 0;
+  font-weight: bold;
+  font-size: 50px;
+  color: #efe9dd;
+}
+.landing .intro-text p {
+  font-family: "Allura", cursive;
+  font-size: 25px;
+  line-height: 1.8;
+  color: #efe9dd;
+}
+/* Start Features Section */
+.features {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #ebeced;
+}
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+.features .feat {
+  padding: 20px;
+  text-align: center;
+}
+.features .feat i {
+  color: var(--secondary-color);
+  font-size: 25px;
+}
+.features .feat h3 {
+  font-family: Helvetica-Bold;
+  font-weight: 1000;
+  margin: 25px 0;
+}
+.features .feat p {
+  font-family: Helvetica;
+  line-height: 1.8;
+  color: #777;
+  font-size: 17px;
+}
+/* End Features Section */
+/* Start Contact */
+.contact {
+  padding-top: var(--padding);
+  padding-bottom: var(--padding);
+  background-color: #efe9dd;
+}
+.contact .info {
+  padding-top: var(--padding);
+  padding-bottom: var(--padding);
+  text-align: center;
+  margin-right: 350px;
+}
+.contact .info .label {
+  font-size: 35px;
+  font-weight: 800;
+  color: var(--secondary-color);
+  letter-spacing: -2px;
+  margin-bottom: 15px;
+}
+.contact .info .link {
+  display: block;
+  font-size: 35px;
+  font-weight: 800;
+  color: var(--main-color);
+  text-decoration: none;
+}
+.contact .info .social {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+.contact .info .social i {
+  margin-left: 10px;
+  color: var(--secondary-color);
+}
+@media (max-width: 767px) {
+  .contact .info .label,
+  .contact .info .link {
+    font-size: 25px;
+  }
+}
+/* End Contact */
+/* Start Footer */
+.footer {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 30px 10px;
+  text-align: center;
+  font-size: 10px;
+}
+.footer span {
+  font-weight: bold;
+  color: #efe9dd;
+}
+/* End Footer */
